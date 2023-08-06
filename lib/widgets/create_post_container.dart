@@ -23,7 +23,7 @@ class CreatePostContainer extends StatelessWidget {
               children: [
                 ProfileAvatar(imageUrl: currentUser.imageUrl, hasBorder: true),
                 const SizedBox(width: 8.0),
-                Expanded(
+                const Expanded(
                   child: TextField(
                     decoration: InputDecoration.collapsed(
                       hintText: 'What\'s on your mind?',
@@ -45,11 +45,11 @@ class CreatePostContainer extends StatelessWidget {
                     onPressed: () {
                       // Your button's action here
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.videocam,
                       color: Colors.red,
                     ),
-                    label: Text(
+                    label: const Text(
                       'Live',
                       style: TextStyle(color: Colors.black),
                     ),
@@ -59,11 +59,11 @@ class CreatePostContainer extends StatelessWidget {
                     onPressed: () {
                       // Your button's action here
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.photo_library,
                       color: Colors.green,
                     ),
-                    label: Text(
+                    label: const Text(
                       'Photo',
                       style: TextStyle(color: Colors.black),
                     ),
@@ -73,11 +73,11 @@ class CreatePostContainer extends StatelessWidget {
                     onPressed: () {
                       // Your button's action here
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.video_call,
                       color: Colors.purpleAccent,
                     ),
-                    label: Text(
+                    label: const Text(
                       'Room',
                       style: TextStyle(color: Colors.black),
                     ),

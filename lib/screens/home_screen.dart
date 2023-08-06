@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:clonbook/models/post_model.dart';
 import 'package:clonbook/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +18,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     _trackingScrollController.dispose();
     super.dispose();
   }
@@ -73,7 +70,7 @@ class _HomeScreenMobile extends StatelessWidget {
           centerTitle: false,
           floating: true,
         ),
-        SliverToBoxAdapter(
+        const SliverToBoxAdapter(
           child: CreatePostContainer(
             currentUser: currentUser,
           ),
@@ -122,7 +119,7 @@ class _HomeScreenDesktop extends StatelessWidget {
           ),
         ),
         const Spacer(),
-        Container(
+        SizedBox(
           width: 600,
           child: CustomScrollView(
             controller: scrollController,
@@ -133,7 +130,7 @@ class _HomeScreenDesktop extends StatelessWidget {
                   child: Stories(currentUser: currentUser, stories: stories),
                 ),
               ),
-              SliverToBoxAdapter(
+              const SliverToBoxAdapter(
                 child: CreatePostContainer(
                   currentUser: currentUser,
                 ),

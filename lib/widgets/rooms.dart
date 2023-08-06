@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last
-
 import 'package:flutter/material.dart';
 
 import '../config/palette.dart';
@@ -51,20 +49,6 @@ class _CreateRoomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return OutlinedButton(
       onPressed: () {},
-      child: Row(
-        children: [
-          ShaderMask(
-            shaderCallback: (rect) => Palette.createRoomGradient.createShader(rect),
-            child: Icon(
-              Icons.video_call,
-              size: 35,
-              color: Colors.white, //used for gradient tint
-            ),
-          ),
-          const SizedBox(width: 4),
-          Text('Create\nRoom'),
-        ],
-      ),
       style: OutlinedButton.styleFrom(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
@@ -74,6 +58,20 @@ class _CreateRoomButton extends StatelessWidget {
           color: Colors.blueAccent[100]!,
         ),
         textStyle: const TextStyle(color: Palette.facebookBlue),
+      ),
+      child: Row(
+        children: [
+          ShaderMask(
+            shaderCallback: (rect) => Palette.createRoomGradient.createShader(rect),
+            child: const Icon(
+              Icons.video_call,
+              size: 35,
+              color: Colors.white, //used for gradient tint
+            ),
+          ),
+          const SizedBox(width: 4),
+          const Text('Create\nRoom'),
+        ],
       ),
     );
   }

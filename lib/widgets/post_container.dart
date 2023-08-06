@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:clonbook/config/palette.dart';
 import 'package:clonbook/widgets/profile_avatar.dart';
@@ -85,7 +83,7 @@ class _PostHeader extends StatelessWidget {
                     '${post.timeAgo} . ',
                     style: TextStyle(color: Colors.grey[600], fontSize: 12),
                   ),
-                  Icon(
+                  const Icon(
                     Icons.public,
                     color: Colors.grey,
                     size: 12,
@@ -95,7 +93,7 @@ class _PostHeader extends StatelessWidget {
             ],
           ),
         ),
-        IconButton(onPressed: () {}, icon: Icon(Icons.more_horiz))
+        IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz))
       ],
     );
   }
@@ -112,8 +110,8 @@ class _PostStates extends StatelessWidget {
         Row(
           children: [
             Container(
-              padding: EdgeInsets.all(4),
-              decoration: BoxDecoration(
+              padding: const EdgeInsets.all(4),
+              decoration: const BoxDecoration(
                 color: Palette.facebookBlue,
                 shape: BoxShape.circle,
               ),

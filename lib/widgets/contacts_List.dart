@@ -10,7 +10,7 @@ class ContactsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        constraints: BoxConstraints(maxWidth: 280),
+        constraints: const BoxConstraints(maxWidth: 280),
         child: Column(
           children: [
             Row(

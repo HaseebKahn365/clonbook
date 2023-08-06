@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:clonbook/config/palette.dart';
 import 'package:flutter/material.dart';
 
@@ -21,13 +19,13 @@ class CustomTabBar extends StatelessWidget {
     return TabBar(
       indicator: BoxDecoration(
         border: isBottomIndicator
-            ? Border(
+            ? const Border(
                 bottom: BorderSide(
                   color: Palette.facebookBlue,
                   width: 3.0,
                 ),
               )
-            : Border(
+            : const Border(
                 top: BorderSide(
                   color: Palette.facebookBlue,
                   width: 3.0,

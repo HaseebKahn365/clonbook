@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -21,16 +19,15 @@ class CustomAppBar extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       height: 65,
-      decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: const [BoxShadow(color: Colors.black12, offset: Offset(0, 2), blurRadius: 4.0)]),
+      decoration: const BoxDecoration(
+          color: Colors.white, boxShadow: [BoxShadow(color: Colors.black12, offset: Offset(0, 2), blurRadius: 4.0)]),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Expanded(
+          const Expanded(
             child: Text(
               'facebook',
-              style: const TextStyle(
+              style: TextStyle(
                 color: Palette.facebookBlue,
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
@@ -38,7 +35,7 @@ class CustomAppBar extends StatelessWidget {
               ),
             ),
           ),
-          Container(
+          SizedBox(
             height: double.infinity,
             width: 600,
             child: CustomTabBar(

@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:clonbook/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -15,10 +13,10 @@ class NavScreen extends StatefulWidget {
 
 class _NavScreenState extends State<NavScreen> {
   final List<Widget> _screens = [
-    HomeScreen(),
-    Scaffold(),
-    Scaffold(),
-    Scaffold(),
+    const HomeScreen(),
+    const Scaffold(),
+    const Scaffold(),
+    const Scaffold(),
   ];
 
   final List<IconData> _icons = const [

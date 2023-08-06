@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:clonbook/models/models.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +22,7 @@ class Stories extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           if (index == 0) {
             return Padding(
-              padding: EdgeInsets.symmetric(horizontal: 4),
+              padding: const EdgeInsets.symmetric(horizontal: 4),
               child: _StoryCard(
                 isAddStory: true,
                 currentUser: currentUser,
@@ -95,7 +93,7 @@ class _StoryCard extends StatelessWidget {
               ? Container(
                   height: 40,
                   width: 40,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.white,
                     shape: BoxShape.circle,
                   ),

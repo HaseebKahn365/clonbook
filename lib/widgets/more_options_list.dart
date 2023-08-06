@@ -22,7 +22,7 @@ class MoreOptionsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        constraints: BoxConstraints(maxWidth: 280),
+        constraints: const BoxConstraints(maxWidth: 280),
         child: ListView.builder(
           itemCount: 1 + _moreOptionsList.length,
           itemBuilder: (BuildContext context, int index) {
@@ -75,7 +75,7 @@ class _Option extends StatelessWidget {
             Flexible(
               child: Text(
                 label,
-                style: TextStyle(fontSize: 16),
+                style: const TextStyle(fontSize: 16),
                 overflow: TextOverflow.ellipsis,
               ),
             )
