@@ -1,5 +1,3 @@
-// ignore_for_file: sort_child_properties_last, prefer_const_constructors
-
 import 'package:clonbook/models/models.dart';
 import 'widgets.dart';
 import 'package:flutter/material.dart';
@@ -15,8 +13,9 @@ class CreatePostContainer extends StatelessWidget {
     return Card(
       margin: EdgeInsets.symmetric(horizontal: isDesktop ? 5.0 : 0.0),
       elevation: isDesktop ? 1.0 : 0.0,
-      shape: !isDesktop ? RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)) : null,
+      shape: isDesktop ? RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)) : null,
       child: Container(
+        color: Colors.white,
         padding: const EdgeInsets.fromLTRB(12, 8, 12, 0),
         child: Column(
           children: [
@@ -88,7 +87,6 @@ class CreatePostContainer extends StatelessWidget {
             )
           ],
         ),
-        color: Colors.white,
       ),
     );
   }
