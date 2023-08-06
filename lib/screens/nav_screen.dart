@@ -3,6 +3,7 @@
 import 'package:clonbook/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../data/data.dart';
 import '../widgets/widgets.dart';
 
 class NavScreen extends StatefulWidget {
@@ -26,24 +27,40 @@ class _NavScreenState extends State<NavScreen> {
     Icons.account_circle,
     Icons.menu,
   ];
-  int selectedIndex = 0;
+  int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: _icons.length,
       child: Scaffold(
+        appBar: Responsive.isDesktop(context)
+            ? PreferredSize(
+                preferredSize: Size(
+                  MediaQuery.of(context).size.width,
+                  100,
+                ),
+                child: CustomAppBar(
+                  currentuser: currentUser,
+                  icons: _icons,
+                  selectedIndex: _selectedIndex,
+                  onTap: (index) => setState(() => _selectedIndex = index),
+                ),
+              )
+            : null,
         body: IndexedStack(
-          index: selectedIndex,
+          index: _selectedIndex,
           children: _screens,
         ),
-        bottomNavigationBar: Padding(
-          padding: const EdgeInsets.only(bottom: 12.0),
-          child: CustomTabBar(
-            icons: _icons,
-            selectedIndex: selectedIndex,
-            onTap: (index) => setState(() => selectedIndex = index),
-          ),
-        ),
+        bottomNavigationBar: !Responsive.isDesktop(context)
+            ? Padding(
+                padding: const EdgeInsets.only(bottom: 12.0),
+                child: CustomTabBar(
+                  icons: _icons,
+                  selectedIndex: _selectedIndex,
+                  onTap: (index) => setState(() => _selectedIndex = index),
+                ),
+              )
+            : const SizedBox.shrink(),
       ),
     );
   }
