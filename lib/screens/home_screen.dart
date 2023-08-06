@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:clonbook/models/post_model.dart';
 import 'package:clonbook/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -60,6 +61,15 @@ class HomeScreen extends StatelessWidget {
             child: Stories(currentUser: currentUser, stories: stories),
           ),
         ),
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (context, index) {
+              final Post post = posts[index];
+              return PostContainer(post: post);
+            },
+            childCount: posts.length,
+          ),
+        )
       ],
     ));
   }
